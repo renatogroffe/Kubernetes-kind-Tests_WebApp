@@ -1,0 +1,22 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sitecontagem
+  labels:
+    app: sitecontagem
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sitecontagem
+  template:
+    metadata:
+      labels:
+        app: sitecontagem
+    spec:
+      containers:
+      - name: sitecontagem
+        image: renatogroffe/sitecontagem-dotnet7-preview2:latest
+        ports:
+        - containerPort: 80
